@@ -1,0 +1,1 @@
+web: gunicorn UTFAST.wsgi --log-file -

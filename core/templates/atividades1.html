@@ -1,0 +1,51 @@
+{% load static %}
+{% load core_extras %}
+<div class="col-md-4">
+  <div class="card h-100">
+            <div class="card-header text-center" style="background-color: #ff6633; padding:0.5rem;"><h5 class="text-white">Atividades</h5></div>
+            <hr class="dark horizontal my-0">
+            <div class="card-body">
+              {% for t in tamanhos %}
+              {% if forloop.counter == 1 %}
+              <div class="progress" style="height: 30px; border-radius:30px;">
+                <div class="progress-bar" role="progressbar" style="width: {{ t }}%; height: 100%; border-radius:30px; background-color: #FF2C00; color: white;" aria-valuenow="{{ t }}" aria-valuemin="0" aria-valuemax="100">À Fazer</div>
+                <div class="progress-bar bg-transparent text-dark" role="progressbar" style="width: calc(100% - {{t}}%); height: 100%; text-align:right;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span style="color: black;">{{ t }}%</span></div>
+              </div>
+              <ul class="mt-2" style="color: #FF2C00">
+                {% for a in atividades %}
+                  {% if a.situacao == 'AF' %}
+                    <li> {{ a.descricao }} </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+              {% endif %}
+              {% if forloop.counter == 2 %}
+              <div class="progress" style="height: 30px; border-radius:30px;">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: {{ t }}%; height: 100%; border-radius:30px; color: white;" aria-valuenow="{{ t }}" aria-valuemin="0" aria-valuemax="100">Fazendo</div>
+                <div class="progress-bar bg-transparent text-dark" role="progressbar" style="width: calc(100% - {{t}}%); height: 100%; text-align:right; color: white;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span style="color: black;">{{ t }}%</span></div>
+              </div>
+              <ul class="mt-2">
+                {% for a in atividades %}
+                  {% if a.situacao == 'FA' %}
+                    <li> {{ a.descricao }} </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+              {% endif %}
+              {% if forloop.counter == 3 %}
+              <div class="progress" style="height: 30px; border-radius:30px;">
+                <div class="progress-bar" role="progressbar" style="width: {{ t }}%; height: 100%; border-radius:30px; background-color: #77B309; color: white;" aria-valuenow="{{ t }}" aria-valuemin="0" aria-valuemax="100">Feito</div>
+                <div class="progress-bar bg-transparent text-dark" role="progressbar" style="width: calc(100% - {{t}}%); height: 100%; text-align:right; color: white;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><span style="color: black;">{{ t }}%</span></div>
+              </div>
+              <ul class="mt-2" style="color: #77B309;">
+                {% for a in atividades %}
+                  {% if a.situacao == 'FE' %}
+                    <li> {{ a.descricao }} </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+</div>

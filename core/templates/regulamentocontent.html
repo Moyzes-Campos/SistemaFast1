@@ -1,0 +1,11 @@
+{% load static %}
+
+{% for t in regulamento %}
+<div class="row">
+
+        <h3>{{t.t1}}</h3>
+        <h4>{{t.t2}}</h4>
+        <h5>{{t.t3}}</h5>
+        <p>{{t.resumo}}</p>
+</div>
+{% endfor %}

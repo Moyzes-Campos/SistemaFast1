@@ -1,0 +1,391 @@
+{% load static %}
+
+{% if request.get_full_path == '/' or request.get_full_path == '/EL' or request.get_full_path == '/DS' or request.get_full_path == '/ES' or request.get_full_path == '/FR' or request.get_full_path == '/PW' or request.get_full_path == '/CM' or request.get_full_path == '/FN' or request.get_full_path == '/GS' or request.get_full_path == '/MK' %}
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+        <img src="{% static 'img/logofast.svg' %}" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">Sistema UTFast</span>
+      </a>
+    </div>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white active" style="background-color: #ff6633;" href="{% url 'indexAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">home</i>
+            </div>
+            <span class="nav-link-text ms-1">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'calendario' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">calendar_month</i>
+            </div>
+            <span class="nav-link-text ms-1">Calendário Fast</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'regulamentoAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">receipt</i>
+            </div>
+            <span class="nav-link-text ms-1">Regulamento</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'brainstorm' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">tips_and_updates</i>
+            </div>
+            <span class="nav-link-text ms-1">Brainstorm</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'analise' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">gavel</i>
+            </div>
+            <span class="nav-link-text ms-1">Análise das Ideias</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'licoes' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-symbols-outlined opacity-10">prescriptions</i>
+            </div>
+            <span class="nav-link-text ms-1">Lições Aprendidas</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+{% endif %}
+
+{% if request.get_full_path == '/calendario' %}
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+        <img src="{% static 'img/logofast.svg' %}" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">Sistema UTFast</span>
+      </a>
+    </div>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'indexAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">home</i>
+            </div>
+            <span class="nav-link-text ms-1">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white active" style="background-color: #ff6633;" href="{% url 'calendario' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">calendar_month</i>
+            </div>
+            <span class="nav-link-text ms-1">Calendário Fast</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'regulamentoAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">receipt</i>
+            </div>
+            <span class="nav-link-text ms-1">Regulamento</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'brainstorm' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">tips_and_updates</i>
+            </div>
+            <span class="nav-link-text ms-1">Brainstorm</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'analise' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">gavel</i>
+            </div>
+            <span class="nav-link-text ms-1">Análise das Ideias</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'licoes' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-symbols-outlined opacity-10">prescriptions</i>
+            </div>
+            <span class="nav-link-text ms-1">Lições Aprendidas</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+{% endif %}
+
+{% if request.get_full_path == '/regulamento/AE' or request.get_full_path == '/regulamento/DS' or request.get_full_path == '/regulamento/ES' or request.get_full_path == '/regulamento/EL' or request.get_full_path == '/regulamento/FR' or request.get_full_path == '/regulamento/PW' or request.get_full_path == '/regulamento/CM' or request.get_full_path == '/regulamento/FN' or request.get_full_path == '/regulamento/GS' or request.get_full_path == '/regulamento/MK'%}
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+        <img src="{% static 'img/logofast.svg' %}" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">Sistema UTFast</span>
+      </a>
+    </div>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white "  href="{% url 'indexAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">home</i>
+            </div>
+            <span class="nav-link-text ms-1">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'calendario' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">calendar_month</i>
+            </div>
+            <span class="nav-link-text ms-1">Calendário Fast</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white active" style="background-color: #ff6633;" href="{% url 'regulamentoAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">receipt</i>
+            </div>
+            <span class="nav-link-text ms-1">Regulamento</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'brainstorm' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">tips_and_updates</i>
+            </div>
+            <span class="nav-link-text ms-1">Brainstorm</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'analise' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">gavel</i>
+            </div>
+            <span class="nav-link-text ms-1">Análise das Ideias</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'licoes' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-symbols-outlined opacity-10">prescriptions</i>
+            </div>
+            <span class="nav-link-text ms-1">Lições Aprendidas</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+{% endif %}
+
+{% if request.get_full_path == '/brainstorm' %}
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+        <img src="{% static 'img/logofast.svg' %}" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">Sistema UTFast</span>
+      </a>
+    </div>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white "  href="{% url 'indexAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">home</i>
+            </div>
+            <span class="nav-link-text ms-1">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'calendario' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">calendar_month</i>
+            </div>
+            <span class="nav-link-text ms-1">Calendário Fast</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'regulamentoAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">receipt</i>
+            </div>
+            <span class="nav-link-text ms-1">Regulamento</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white ativo" style="background-color: #ff6633;"  href="{% url 'brainstorm' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">tips_and_updates</i>
+            </div>
+            <span class="nav-link-text ms-1">Brainstorm</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'analise' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">gavel</i>
+            </div>
+            <span class="nav-link-text ms-1">Análise das Ideias</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'licoes' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-symbols-outlined opacity-10">prescriptions</i>
+            </div>
+            <span class="nav-link-text ms-1">Lições Aprendidas</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+{% endif %}
+
+{% if request.get_full_path == '/analise' %}
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+        <img src="{% static 'img/logofast.svg' %}" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">Sistema UTFast</span>
+      </a>
+    </div>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white "  href="{% url 'indexAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">home</i>
+            </div>
+            <span class="nav-link-text ms-1">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'calendario' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">calendar_month</i>
+            </div>
+            <span class="nav-link-text ms-1">Calendário Fast</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'regulamentoAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">receipt</i>
+            </div>
+            <span class="nav-link-text ms-1">Regulamento</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'brainstorm' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">tips_and_updates</i>
+            </div>
+            <span class="nav-link-text ms-1">Brainstorm</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white ativo" style="background-color: #ff6633;"  href="{% url 'analise' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">gavel</i>
+            </div>
+            <span class="nav-link-text ms-1">Análise das Ideias</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'licoes' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-symbols-outlined opacity-10">prescriptions</i>
+            </div>
+            <span class="nav-link-text ms-1">Lições Aprendidas</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+{% endif %}
+
+{% if request.get_full_path == '/licoes' %}
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+        <img src="{% static 'img/logofast.svg' %}" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white">Sistema UTFast</span>
+      </a>
+    </div>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white"  href="{% url 'indexAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">home</i>
+            </div>
+            <span class="nav-link-text ms-1">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'calendario' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">calendar_month</i>
+            </div>
+            <span class="nav-link-text ms-1">Calendário Fast</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'regulamentoAE' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">receipt</i>
+            </div>
+            <span class="nav-link-text ms-1">Regulamento</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white"  href="{% url 'brainstorm' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">tips_and_updates</i>
+            </div>
+            <span class="nav-link-text ms-1">Brainstorm</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="{% url 'analise' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">gavel</i>
+            </div>
+            <span class="nav-link-text ms-1">Análise das Ideias</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white ativo" style="background-color: #ff6633;"  href="{% url 'licoes' %}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-symbols-outlined opacity-10">prescriptions</i>
+            </div>
+            <span class="nav-link-text ms-1">Lições Aprendidas</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+{% endif %}

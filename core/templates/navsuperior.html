@@ -1,0 +1,976 @@
+{% load static %}
+
+{% if request.get_full_path == '/' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">  {{ pagina }} - Aerodinâmica</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Aerodinâmica</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'indexAE' %}" class="dropdown-item ativo">Aerodinâmica</a>
+                  <a href="{% url 'indexDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'indexEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'indexES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'indexFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'indexPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'indexCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'indexFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'indexGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'indexMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/DS' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Direção e Suspenção</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Dir. Suspensão</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'indexAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'indexDS' %}" class="dropdown-item ativo">Dir. e Suspenção</a>
+                  <a href="{% url 'indexEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'indexES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'indexFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'indexPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'indexCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'indexFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'indexGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'indexMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/EL' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Elétrica</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Elétrica</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'indexAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'indexDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'indexEL' %}" class="dropdown-item ativo">Elétrica</a>
+                  <a href="{% url 'indexES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'indexFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'indexPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'indexCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'indexFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'indexGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'indexMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/ES' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Estrutura</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Estrutura</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'indexAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'indexDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'indexEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'indexES' %}" class="dropdown-item ativo">Estrutura</a>
+                  <a href="{% url 'indexFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'indexPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'indexCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'indexFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'indexGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'indexMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/FR' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Freio</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Freio</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'indexAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'indexDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'indexEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'indexES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'indexFR' %}" class="dropdown-item ativo">Freio</a>
+                  <a href="{% url 'indexPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'indexCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'indexFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'indexGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'indexMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/PW' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Powertrain</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Powertrain</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'indexAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'indexDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'indexEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'indexES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'indexFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'indexPW' %}" class="dropdown-item ativo">Powertrain</a>
+                  <a href="{% url 'indexCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'indexFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'indexGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'indexMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/CM' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Comercial</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Comercial</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'indexAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'indexDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'indexEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'indexES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'indexFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'indexPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'indexCM' %}" class="dropdown-item ativo">Comercial</a>
+                  <a href="{% url 'indexFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'indexGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'indexMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/FN' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Financeiro</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Financeiro</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'indexAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'indexDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'indexEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'indexES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'indexFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'indexPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'indexCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'indexFN' %}" class="dropdown-item ativo">Financeiro</a>
+                  <a href="{% url 'indexGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'indexMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/GS' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Gestão de Pessoas</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">G. Pessoas</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'indexAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'indexDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'indexEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'indexES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'indexFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'indexPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'indexCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'indexFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'indexGS' %}" class="dropdown-item ativo">Gestão de Pessoas</a>
+                  <a href="{% url 'indexMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/MK' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Marketing</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Marketing</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'indexAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'indexDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'indexEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'indexES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'indexFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'indexPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'indexCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'indexFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'indexGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'indexMK' %}" class="dropdown-item ativo">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/regulamento/AE' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Aerodinâmica</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Aerodinâmica</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'regulamentoAE' %}" class="dropdown-item ativo">Aerodinâmica</a>
+                  <a href="{% url 'regulamentoDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'regulamentoEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'regulamentoES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'regulamentoFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'regulamentoPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'regulamentoCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'regulamentoFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'regulamentoGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'regulamentoMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/regulamento/DS' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Direção e Suspenção</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Dir. Suspenção</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'regulamentoAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'regulamentoDS' %}" class="dropdown-item ativo">Dir. e Suspenção</a>
+                  <a href="{% url 'regulamentoEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'regulamentoES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'regulamentoFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'regulamentoPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'regulamentoCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'regulamentoFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'regulamentoGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'regulamentoMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+
+{% if request.get_full_path == '/regulamento/ES' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Estrutura</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Estrutura</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'regulamentoAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'regulamentoDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'regulamentoEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'regulamentoES' %}" class="dropdown-item ativo">Estrutura</a>
+                  <a href="{% url 'regulamentoFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'regulamentoPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'regulamentoCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'regulamentoFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'regulamentoGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'regulamentoMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/regulamento/EL' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Elétrica</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Elétrica</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'regulamentoAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'regulamentoDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'regulamentoEL' %}" class="dropdown-item ativo">Elétrica</a>
+                  <a href="{% url 'regulamentoES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'regulamentoFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'regulamentoPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'regulamentoCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'regulamentoFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'regulamentoGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'regulamentoMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/regulamento/FR' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Freio</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Freio</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'regulamentoAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'regulamentoDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'regulamentoEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'regulamentoES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'regulamentoFR' %}" class="dropdown-item ativo">Freio</a>
+                  <a href="{% url 'regulamentoPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'regulamentoCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'regulamentoFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'regulamentoGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'regulamentoMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/regulamento/PW' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Powertrain</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Powertrain</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'regulamentoAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'regulamentoDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'regulamentoEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'regulamentoES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'regulamentoFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'regulamentoPW' %}" class="dropdown-item ativo">Powertrain</a>
+                  <a href="{% url 'regulamentoCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'regulamentoFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'regulamentoGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'regulamentoMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+
+{% if request.get_full_path == '/regulamento/CM' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Comercial</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Comercial</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'regulamentoAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'regulamentoDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'regulamentoEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'regulamentoES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'regulamentoFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'regulamentoPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'regulamentoCM' %}" class="dropdown-item ativo">Comercial</a>
+                  <a href="{% url 'regulamentoFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'regulamentoGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'regulamentoMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/regulamento/FN' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Financeiro</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Financeiro</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'regulamentoAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'regulamentoDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'regulamentoEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'regulamentoES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'regulamentoFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'regulamentoPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'regulamentoCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'regulamentoFN' %}" class="dropdown-item ativo">Financeiro</a>
+                  <a href="{% url 'regulamentoGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'regulamentoMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/regulamento/GS' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Gestão de Pessoas</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">G. Pessoas</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'regulamentoAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'regulamentoDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'regulamentoEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'regulamentoES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'regulamentoFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'regulamentoPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'regulamentoCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'regulamentoFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'regulamentoGS' %}" class="dropdown-item ativo">Gestão de Pessoas</a>
+                  <a href="{% url 'regulamentoMK' %}" class="dropdown-item">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
+
+{% if request.get_full_path == '/regulamento/MK' %}
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">{{ pagina }} - Marketing</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #ff6633; margin-bottom: 0;">Marketing</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #ff6633; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  <a href="{% url 'regulamentoAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'regulamentoDS' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'regulamentoEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'regulamentoES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'regulamentoFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'regulamentoPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'regulamentoCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'regulamentoFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'regulamentoGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'regulamentoMK' %}" class="dropdown-item ativo">Marketing</a>
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endif %}
